@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# ============================================================
+# Description: Create users and assign Admin rights ONLY to IT
+# Usage: sudo ./add_users.sh <username> <department>
+# ============================================================
+
+USERNAME=$1
+DEPT=$2
+
+if [ -z "$USERNAME" ] || [ -z "$DEPT" ]; then
+    echo "Usage: $0 <username> <department>"
+    exit 1
+fi
+
+# 1. Create the user
+sudo useradd -m "$USERNAME"
+
+# 2. Assign to Department Group
+sudo usermod -aG "$DEPT" "$USERNAME"
+
+# 3. Check if the user is from IT to grant Sudo privileges
+if [ "$DEPT" == "it" ]; then
+    echo "Granting administrative privileges to $USERNAME..."
+    sudo usermod -aG wheel "$USERNAME"
+else
+    echo "User $USERNAME created as a standard user (No Sudo)."
+fi
+
+# 4. Set password
+echo "Htu@123" | sudo passwd --stdin "$USERNAME"
+
+echo "Done: $USERNAME is ready in $DEPT department."

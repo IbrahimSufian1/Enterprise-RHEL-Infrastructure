@@ -1,0 +1,19 @@
+lang en_US
+keyboard --xlayouts='us'
+timezone Asia/Amman --utc
+rootpw --lock
+user --name=sysadmin --groups=wheel --password=Sysadmin@2026--iscrypted --gecos="System Admin"
+reboot
+cdrom
+bootloader --append="rhgb quiet"
+zerombr
+clearpart --all --initlabel
+autopart
+network --bootproto=dhcp
+firstboot --disable
+selinux --enforcing
+firewall --enabled --ssh
+%packages
+@^minimal-environment
+kexec-tools
+%end

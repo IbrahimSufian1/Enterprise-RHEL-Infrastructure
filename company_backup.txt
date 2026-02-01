@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Define source and destination
+SOURCE="/company"
+DESTINATION="/backup"
+# Using date to create a unique filename each day
+DATE=$(date +%Y-%m-%d)
+FILENAME="company_archive_$DATE.tar.gz"
+
+# Create the compressed tarball
+# -c: Create, -z: compress (gzip), -f: file
+sudo tar -czf $DESTINATION/$FILENAME $SOURCE
+
+# Print status message
+echo "Archive for $SOURCE created at $DESTINATION/$FILENAME"
