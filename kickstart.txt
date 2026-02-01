@@ -2,7 +2,7 @@ lang en_US
 keyboard --xlayouts='us'
 timezone Asia/Amman --utc
 rootpw --lock
-user --name=sysadmin --groups=wheel --password=Sysadmin@2026--iscrypted --gecos="System Admin"
+user --name=sysadmin --groups=wheel --password=password--iscrypted --gecos="System Admin"
 reboot
 cdrom
 bootloader --append="rhgb quiet"
