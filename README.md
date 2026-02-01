@@ -33,4 +33,4 @@ This project demonstrates a comprehensive infrastructure rebuild using **Red Hat
 <img width="544" height="102" alt="Picture1" src="https://github.com/user-attachments/assets/0395476b-4550-4389-af30-39aec51ecf33" />
 
 ---
-*This project was part of the DevOps Bootcamp Capstone at Al Hussein Technical University (HTU).*
+*© Developed by Ibrahim Sufian as part of the DevOps Capstone Project.*
